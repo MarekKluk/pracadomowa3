@@ -41,8 +41,7 @@ console.log(quarter);
 
 //Convert to string function
 function convertToString(bool){
-    let newString = bool === true? 'true':'false';
-    return newString;
+    return bool.toString();
 }
 console.log(convertToString(true));
 
@@ -51,7 +50,7 @@ console.log(convertToString(true));
 function yesOrNo (input){
     if (input){
         return 'Yes';
-    } else return 'No';
+    }return 'No';
 }
 console.log(yesOrNo(true));
 console.log(yesOrNo(false));
@@ -72,10 +71,7 @@ console.log(howOldIsUser(user));
 
 function isPalindrome(input){
     let inputWithoutSpaces = input.replace(/\W/g, "");
-    let newString = '';
-    for (let i = inputWithoutSpaces.length - 1; i>=0; i--) {
-        newString += inputWithoutSpaces[i];
-    }
+    let newString = inputWithoutSpaces.split("").reverse().join("");
     return newString === inputWithoutSpaces? 'True' : "False";
 }
 console.log(isPalindrome('a to kanapa pana kota'));
@@ -85,18 +81,18 @@ console.log(isPalindrome('a to kanapa pana kota'));
 function rockPaperScissors(input1, input2){
     if (input1 === input2){
         return '0'
-    } else if(input1 === 'Rock'){
+    } if(input1 === 'Rock'){
         if(input2 === 'Scissors'){
             return '1';
         }else return'2';
-    }else if (input1 === 'Scissors'){
+    } if (input1 === 'Scissors'){
         if(input2 === 'Paper'){
             return '1';
-        } else return '2';
-    }else if (input1 === 'Paper'){
+        }  return '2';
+    } if (input1 === 'Paper'){
         if(input2 === 'Rock'){
             return '1';
-        } else return '2';
+        } return '2';
     }
 }
 console.log(rockPaperScissors('Paper','Paper'));
